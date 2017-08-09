@@ -1,31 +1,68 @@
 <!doctype html>
 <html lang="en" ng-app="myModule">
-    <head>
-        <meta charset="utf-8">
-        <title>Welcome to BooKart</title>
-        
-        <script src="scripts/angular.min.js"></script>
-        <script src="scripts/Script.js"></script>
-    </head>
-    <body ng-controller="myController">
-        
-        <div>
-        	{{message}}
-        </div>
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to BooKart</title>
 
-        <div>
-        	{{employee.Name}}
-        </div>
-        
-        <div>
-        	{{employee.Address}}
-        </div>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/Script.js"></script>
+</head>
+<body ng-controller="myController">
 
-        <!--<img ng-src="imgs/{{employee.image}}" alt="Geronimo" />-->
-        <div>
+<div>
+    {{message}}
+</div>
 
-        <input type="text" ng-model = "message" />
-               {{message}}
-        </div>
-    </body>
+<div>
+    {{employee.Name}}
+</div>
+
+<div>
+    {{employee.Address}}
+</div>
+
+<!--<img ng-src="imgs/{{employee.image}}" alt="Geronimo" />-->
+<div>
+
+    <input type="text" ng-model="message"/>
+    {{message}}
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+    </tr>
+
+
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="employee in employees">
+        <td>{{employee.Name}}</td>
+        <td>{{employee.Address}}</td>
+    </tr>
+
+    </tbody>
+</table>
+    <br>
+    <br>
+
+    <ul>
+        <li ng-repeat="country in countries">   {{country.name}}
+
+            <ul>
+                <li ng-repeat="city in country.cities">
+                {{city.name}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+
+
+
+
+</body>
 </html>
