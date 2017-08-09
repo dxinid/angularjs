@@ -41,9 +41,39 @@ var myApp = angular.module("myModule", []).controller("myController", function (
 
     ];
 
+    var technologies = [
+        {
+            name: "Java",
+            likes: 0,
+            dislikes: 0
+
+        },
+        {   name: "C",
+            likes: 0,
+            dislikes: 0
+        },
+        {   name: "Python",
+            likes: 0,
+            dislikes: 0
+        }
+    ];
+
     $scope.message = "Test Message";
     $scope.employees = employees;
     $scope.countries = countries;
+    $scope.technologies = technologies;
+
+
+    $scope.incrementLikes = function (technology)
+    {
+        technology.likes++;
+    }
+
+    $scope.decrementLikes = function (technology)
+    {
+        technology.dislikes++;
+
+    }
 });
 
 // var myApp = angular.module ("myModule", []); //No dependencies are added.
@@ -58,3 +88,4 @@ var myApp = angular.module("myModule", []).controller("myController", function (
 // 	$scope.message = "Test Message";
 // 	$scope.employee = employee;
 // });
+

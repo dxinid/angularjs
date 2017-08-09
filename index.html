@@ -31,34 +31,32 @@
 <table>
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Address</th>
+        <th>Technology</th>
+        <th>Likes</th>
+        <th>DisLikes</th>
+        <th>Do Like</th>
+        <th>Do Dislike</th>
     </tr>
 
 
     </thead>
 
     <tbody>
-    <tr ng-repeat="employee in employees">
-        <td>{{employee.Name}}</td>
-        <td>{{employee.Address}}</td>
+    <tr ng-repeat="technology in technologies">
+        <td>{{technology.name}}</td>
+        <td>{{technology.likes}}</td>
+        <td>{{technology.dislikes}}</td>
+        <td>
+            <input type = "button" value="Like" ng-click = "incrementLikes(technology)"/>
+        </td>
+        <td>
+            <input type = "button" value="DisLike" ng-click = "decrementLikes(technology)"/>
+        </td>
     </tr>
 
     </tbody>
 </table>
-    <br>
-    <br>
 
-    <ul>
-        <li ng-repeat="country in countries">   {{country.name}}
-
-            <ul>
-                <li ng-repeat="city in country.cities">
-                {{city.name}}
-                </li>
-            </ul>
-        </li>
-    </ul>
 
 
 
