@@ -4,7 +4,8 @@ var myApp = angular.module("myModule", []).controller ("myController", function 
 
     	var employee = {
 			Name: "Dimitris Xinidis",
-			Address: "Peloponhsou 34"
+			Address: "Peloponhsou 34",
+            image: "geronimo.jpeg"
 	};
 
 	$scope.message = "Test Message";
