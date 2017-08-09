@@ -4,6 +4,12 @@ var myApp = angular.module ("myModule", []); //No dependencies are added.
 
 myApp.controller ("myController", function ($scope){
 	
-	$scope.message "Test Message";
+	var employee = {
+			Name: "Dimitris Xinidis",
+			Address: "Peloponhsou 34"
+	};
 	
+	$scope.message = "Test Message";
+	$scope.employee = employee;
 });
+
