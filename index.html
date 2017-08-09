@@ -9,49 +9,29 @@
 </head>
 <body ng-controller="myController">
 
-<div>
-    {{message}}
-</div>
-
-<div>
-    {{employee.Name}}
-</div>
-
-<div>
-    {{employee.Address}}
-</div>
-
-<!--<img ng-src="imgs/{{employee.image}}" alt="Geronimo" />-->
-<div>
-
-    <input type="text" ng-model="message"/>
-    {{message}}
-</div>
 
 <table>
     <thead>
     <tr>
-        <th>Technology</th>
-        <th>Likes</th>
-        <th>DisLikes</th>
-        <th>Do Like</th>
-        <th>Do Dislike</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Salary (number)</th>
+        <th>Salary (currency)</th>
     </tr>
 
 
     </thead>
 
     <tbody>
-    <tr ng-repeat="technology in technologies">
-        <td>{{technology.name}}</td>
-        <td>{{technology.likes}}</td>
-        <td>{{technology.dislikes}}</td>
-        <td>
-            <input type = "button" value="Like" ng-click = "incrementLikes(technology)"/>
-        </td>
-        <td>
-            <input type = "button" value="DisLike" ng-click = "decrementLikes(technology)"/>
-        </td>
+    <tr ng-repeat="employee in employees">
+        <td>{{employee.name | uppercase }}</td>
+        <td>{{employee.address}}</td>
+        <td>{{employee.gender | lowercase }} </td>
+        <td>{{employee.birthdate | date:"dd/MM/yyyy" }}</td>
+        <td>{{employee.salary | number:2}}</td>
+        <td>{{employee.salary | currency}}</td>
+
     </tr>
 
     </tbody>

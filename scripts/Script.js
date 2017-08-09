@@ -2,90 +2,41 @@
 
 var myApp = angular.module("myModule", []).controller("myController", function ($scope) {
 
-    var employee = {
-        Name: "Dimitris Xinidis",
-        Address: "Peloponhsou 34",
-        image: "geronimo.jpeg"
-    };
+
 
     var employees = [
         {
-            Name: "Dimitris Xinidis",
-            Address: "Peloponhsou 34",
-            image: "geronimo.jpeg"
+            name: "Dimitris Xinidis",
+            address: "Peloponhsou 34",
+            gender: "Male",
+            birthdate: new Date ("March 24, 1982"),
+            salary: 23500.20
         },
         {
-            Name: "Bill Psalto",
-            Address: "Panormou 10",
-            image: "geronimo.jpeg"
+            name: "Bill Psalto",
+            address: "Panormou 10",
+            gender: "Male",
+            birthdate: new Date("January 1, 1982"),
+            salary: 40600.45
         }
 
     ];
 
-    var countries = [
-        {
-            name: "Greece",
-            cities: [
-                {name: "Athens"},
-                {name: "Kalamata"}
-            ]
-        },
-        {
-            name: "Italy",
-            cities: [
-                {name: "Roma"},
-                {name: "Napoli"}
-            ]
-        }
 
-
-    ];
-
-    var technologies = [
-        {
-            name: "Java",
-            likes: 0,
-            dislikes: 0
-
-        },
-        {   name: "C",
-            likes: 0,
-            dislikes: 0
-        },
-        {   name: "Python",
-            likes: 0,
-            dislikes: 0
-        }
-    ];
-
-    $scope.message = "Test Message";
     $scope.employees = employees;
-    $scope.countries = countries;
-    $scope.technologies = technologies;
 
 
-    $scope.incrementLikes = function (technology)
-    {
-        technology.likes++;
-    }
-
-    $scope.decrementLikes = function (technology)
-    {
-        technology.dislikes++;
-
-    }
+    // $scope.incrementLikes = function (technology)
+    // {
+    //     technology.likes++;
+    // }
+    //
+    // $scope.decrementLikes = function (technology)
+    // {
+    //     technology.dislikes++;
+    //
+    // }
 });
 
-// var myApp = angular.module ("myModule", []); //No dependencies are added.
 
-// myApp.controller ("myController", function ($scope){
-//
-// 	var employee = {
-// 			Name: "Dimitris Xinidis",
-// 			Address: "Peloponhsou 34"
-// 	};
-//
-// 	$scope.message = "Test Message";
-// 	$scope.employee = employee;
-// });
 
