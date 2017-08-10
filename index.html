@@ -12,7 +12,13 @@
 
 <!--<input type="text" ng-model="searchText"> &lt;!&ndash; Search to all columns for the specified text&ndash;&gt;-->
 
-<input type="text" ng-model="searchText.name"> <!-- Search only to the specified column -->
+<input type="text" ng-model="searchText.name" placeholder="Search Name"> <!-- Search only to the specified column -->
+<input type="text" ng-model="searchText.address" placeholder="Search Address"> <!-- Search only to the specified column -->
+
+<input type="checkbox" ng-model="exactMatch"> Exact Match
+
+<br><br>
+
 
 <table>
     <thead>
@@ -35,8 +41,8 @@
     </thead>
 
     <tbody>
-    <tr ng-repeat="employee in employees | filter: searchText | orderBy:sortColumn:ascending">
-        <td>{{employee.name | uppercase }}</td>
+    <tr ng-repeat="employee in employees | filter: searchText:exactMatch | orderBy:sortColumn:ascending">
+        <td>{{employee.name}}</td>
         <td>{{employee.address}}</td>
         <td>{{employee.gender | lowercase }}</td>
         <td>{{employee.birthdate | date:"dd/MM/yyyy" }}</td>
