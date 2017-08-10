@@ -24,7 +24,7 @@ var myApp = angular.module("myModule", []).controller("myController", function (
 
 
     $scope.employees = employees;
-
+    $scope.sortColumn = "name"; //Initial sort column when the page is loaded
 
     // $scope.incrementLikes = function (technology)
     // {

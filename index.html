@@ -9,6 +9,12 @@
 </head>
 <body ng-controller="myController">
 
+<select ng-model = "sortColumn">
+    <option value="name">Name ASC</option>
+    <option value="address">Address ASC</option>
+    <option value="gender">Gender ASC</option>
+    <option value="birthdate">Birthdate ASC</option>
+</select>
 
 <table>
     <thead>
@@ -16,6 +22,7 @@
         <th>Name</th>
         <th>Address</th>
         <th>Gender</th>
+        <th>Birthdate</th>
         <th>Salary (number)</th>
         <th>Salary (currency)</th>
     </tr>
@@ -24,7 +31,7 @@
     </thead>
 
     <tbody>
-    <tr ng-repeat="employee in employees">
+    <tr ng-repeat="employee in employees | orderBy:sortColumn">
         <td>{{employee.name | uppercase }}</td>
         <td>{{employee.address}}</td>
         <td>{{employee.gender | lowercase }} </td>
@@ -36,9 +43,6 @@
 
     </tbody>
 </table>
-
-
-
 
 
 
