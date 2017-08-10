@@ -3,13 +3,12 @@
 var myApp = angular.module("myModule", []).controller("myController", function ($scope) {
 
 
-
     var employees = [
         {
             name: "Dimitris Xinidis",
             address: "Peloponhsou 34",
             gender: "Male",
-            birthdate: new Date ("March 24, 1982"),
+            birthdate: new Date("March 24, 1982"),
             salary: 23500.20
         },
         {
@@ -42,29 +41,23 @@ var myApp = angular.module("myModule", []).controller("myController", function (
 
     $scope.ascending = true;
 
-    $scope.sortData = function (column)
-    {
-        console.log ("sortData Entering...");
+    $scope.sortData = function (column) {
+        console.log("sortData Entering...");
 
-        if ($scope.sortColumn == column)
-        {
+        if ($scope.sortColumn == column) {
             $scope.ascending = !$scope.ascending; //Reverse the direction
         }
 
         $scope.sortColumn = column;
     }
 
-    $scope.getClassData = function (column)
-    {
-        console.log ("getClassData Entering... [column="+column+"]");
-        if ($scope.sortColumn == column)
-        {
-            if ($scope.ascending  == true)
-            {
+    $scope.getClassData = function (column) {
+        console.log("getClassData Entering... [column=" + column + "]");
+        if ($scope.sortColumn == column) {
+            if ($scope.ascending == true) {
                 return 'arrow-down';
             }
-            else if ($scope.ascending  == false)
-            {
+            else if ($scope.ascending == false) {
                 return 'arrow-up';
             }
         }

@@ -6,22 +6,19 @@
 
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/Script.js"></script>
-    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet"/>
 </head>
 <body ng-controller="myController">
 
-<select ng-model = "sortColumn">
-    <option value="name">Name ASC</option>
-    <option value="address">Address ASC</option>
-    <option value="gender">Gender ASC</option>
-    <option value="birthdate">Birthdate ASC</option>
-</select>
+<!--<input type="text" ng-model="searchText"> &lt;!&ndash; Search to all columns for the specified text&ndash;&gt;-->
+
+<input type="text" ng-model="searchText.name"> <!-- Search only to the specified column -->
 
 <table>
     <thead>
     <tr>
         <th ng-click="sortData('name')">Name
-        <div ng-class="getClassData('name')"></div>
+            <div ng-class="getClassData('name')"></div>
         </th>
         <th ng-click="sortData('address')">Address
             <div ng-class="getClassData('address')"></div>
@@ -38,10 +35,10 @@
     </thead>
 
     <tbody>
-    <tr ng-repeat="employee in employees | orderBy:sortColumn:ascending">
+    <tr ng-repeat="employee in employees | filter: searchText | orderBy:sortColumn:ascending">
         <td>{{employee.name | uppercase }}</td>
         <td>{{employee.address}}</td>
-        <td>{{employee.gender | lowercase }} </td>
+        <td>{{employee.gender | lowercase }}</td>
         <td>{{employee.birthdate | date:"dd/MM/yyyy" }}</td>
         <td>{{employee.salary | number:2}}</td>
         <td>{{employee.salary | currency}}</td>
@@ -50,7 +47,6 @@
 
     </tbody>
 </table>
-
 
 
 </body>
