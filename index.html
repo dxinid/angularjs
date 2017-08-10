@@ -6,6 +6,7 @@
 
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/Script.js"></script>
+    <link href="css/app.css" rel="stylesheet" />
 </head>
 <body ng-controller="myController">
 
@@ -19,9 +20,15 @@
 <table>
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Address</th>
-        <th>Gender</th>
+        <th ng-click="sortData('name')">Name
+        <div ng-class="getClassData('name')"></div>
+        </th>
+        <th ng-click="sortData('address')">Address
+            <div ng-class="getClassData('address')"></div>
+        </th>
+        <th ng-click="sortData('gender')">Gender
+            <div ng-class="getClassData('gender')"></div>
+        </th>
         <th>Birthdate</th>
         <th>Salary (number)</th>
         <th>Salary (currency)</th>
@@ -31,7 +38,7 @@
     </thead>
 
     <tbody>
-    <tr ng-repeat="employee in employees | orderBy:sortColumn">
+    <tr ng-repeat="employee in employees | orderBy:sortColumn:ascending">
         <td>{{employee.name | uppercase }}</td>
         <td>{{employee.address}}</td>
         <td>{{employee.gender | lowercase }} </td>

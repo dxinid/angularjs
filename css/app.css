@@ -1,83 +1,41 @@
-#headerWrapper {
-    width: 100%;
-	height: 80px;
+body {
+	font-family: Arial;
 }
 
-.logo {
-    padding: 10px;
-    margin-right: 10x;
-    font-size: 35px;
-    font-family: fantasy;
+table {
+	border-collapse: collapse;
 }
 
-.tagline {
-    font-size: 10px;
-    margin-top: 50px;
-    margin-left: -123px;
-    font-family: monospace;
+td {
+	border: 1px solid black;
+	padding: 5px;
 }
 
-.nav-wrapper {
-    margin-left: 100px;
-    margin-top: 15px;
+th {
+	border: 1px solid black;
+	padding: 5px;
+	text-align: left;
+	/*cursor property displays hand symbol
+        when hovered over the th element*/
+	cursor: pointer;
 }
 
-#bookListWrapper {
-	width: 100%;
-	padding: 10px;
+/*This class displays the UP arrow*/
+.arrow-up {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid black;
+	display:inline-block;
 }
 
-#bookListWrapper input {
-	width: 25%;
-}
-
-#bookListWrapper .book {
-	border: 1px solid gray;
-	padding: 10px;
-	margin-bottom: 10px;	
-	position: relative;
-}
-
-#bookListWrapper .book .book-details {
-	margin-left: 160px;
-}
-
-.container.ng-enter {
-	-webkit-transition:0.5s linear all;
-	 -moz-transition:0.5s linear all;
-	 -o-transition:0.5s linear all;
-	 transition:0.5s linear all;
-	 opacity:0;
-}
-
-.container.ng-enter-active {
-	 opacity:1;
-}
-
-.book.ng-leave {
-	-webkit-transition:0.5s linear all;
-	 -moz-transition:0.5s linear all;
-	 -o-transition:0.5s linear all;
-	 transition:0.5s linear all;
-	 opacity:1;
-	 left: 0;
-}
-
-.book.ng-leave-active {
-	opacity:0;
-	left: 600px;
-}
-
-.book.ng-enter {
-	-webkit-transition:0.5s linear all;
-	 -moz-transition:0.5s linear all;
-	 -o-transition:0.5s linear all;
-	 transition:0.5s linear all;
-	 opacity:0;
-	 left: 600px;
-}
-
-.book.ng-enter-active {
-	opacity:1;
-	left: 0;
+/*This class displays the DOWN arrow*/
+.arrow-down {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 10px solid black;
+	display:inline-block;
 }
