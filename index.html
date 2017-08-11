@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="en" ng-app="myModule">
+<html lang="en" ng-app="myAppModule">
 <head>
     <meta charset="utf-8">
     <title>Welcome to BooKart</title>
 
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/Script.js"></script>
+    <script src="scripts/controllers/CustomServiceController.js"></script>
     <link href="css/app.css" rel="stylesheet"/>
 </head>
-<body ng-controller="myController">
+<body ng-controller = "customServiceController">
 
 <!--<input type="text" ng-model="searchText"> &lt;!&ndash; Search to all columns for the specified text&ndash;&gt;-->
 
@@ -17,8 +18,9 @@
 
 <input type="checkbox" ng-model="exactMatch"> Exact Match
 
-<br><br>
+<br /><br />
 
+<div ng-include="'transformText.html'"></div>
 
 <!--<select ng-model="viewSubPage">-->
 <!--<option value="pageList.html"> Results in List view</option>-->
@@ -27,7 +29,7 @@
 <!--&lt;!&ndash;<div ng-include="'page2.html'"></div>&ndash;&gt;-->
 
 
-<div ng-include="viewSubPage"></div>
+
 
 
 
