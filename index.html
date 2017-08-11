@@ -19,42 +19,13 @@
 
 <br><br>
 
-test
 
-<table>
-    <thead>
-    <tr>
-        <th ng-click="sortData('name')">Name
-            <div ng-class="getClassData('name')"></div>
-        </th>
-        <th ng-click="sortData('address')">Address
-            <div ng-class="getClassData('address')"></div>
-        </th>
-        <th ng-click="sortData('gender')">Gender
-            <div ng-class="getClassData('gender')"></div>
-        </th>
-        <th>Birthdate</th>
-        <th>Salary (number)</th>
-        <th>Salary (currency)</th>
-    </tr>
-
-
-    </thead>
-
-    <tbody>
-    <tr ng-repeat="employee in employees | filter: searchText:exactMatch | orderBy:sortColumn:ascending">
-        <td>{{employee.name}}</td>
-        <td>{{employee.address}}</td>
-        <td>{{employee.gender | lowercase }}</td>
-        <td>{{employee.birthdate | date:"dd/MM/yyyy" }}</td>
-        <td>{{employee.salary | number:2}}</td>
-        <td>{{employee.salary | currency}}</td>
-
-    </tr>
-
-    </tbody>
-</table>
-
+<select ng-model="viewSubPage">
+    <option value="pageList.html"> Results in List view</option>
+    <option value="pageTable.html"> Results in Table view</option>
+</select>
+<!--<div ng-include="'page2.html'"></div>-->
+<div ng-include="viewSubPage"></div>
 
 </body>
 </html>
