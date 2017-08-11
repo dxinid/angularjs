@@ -20,6 +20,10 @@
 <br><br>
 
 
+<select ng-model="viewSubPage">
+    <option value="pageList.html"> Results in List view</option>
+    <option value="pageTable.html"> Results in Table view</option>
+</select>
 <!--<div ng-include="'page2.html'"></div>-->
 <div ng-include="viewSubPage"></div>
 
