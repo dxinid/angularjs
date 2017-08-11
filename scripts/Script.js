@@ -41,6 +41,8 @@ var myApp = angular.module("myModule", []).controller("myController", function (
 
     $scope.ascending = true;
 
+    $scope.viewSubPage = "page2.html";
+
     $scope.sortData = function (column) {
         console.log("sortData Entering...");
 
