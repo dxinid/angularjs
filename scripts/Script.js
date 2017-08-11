@@ -1,6 +1,6 @@
 /// <reference path="angular.min.js" />
 
-var myApp = angular.module("myModule", []).controller("myController", function ($scope) {
+var myApp = angular.module("myModule", []).controller("myController", function ($scope, $http, $log) {
 
 
     var employees = [
@@ -41,7 +41,34 @@ var myApp = angular.module("myModule", []).controller("myController", function (
 
     $scope.ascending = true;
 
-    $scope.viewSubPage = "pageTable.html";
+    $scope.viewSubPage = "usersTable.html";
+
+    //call rest service
+
+    // $http(
+    //     {
+    //         method: "GET",
+    //         url: "https://jsonplaceholder.typicode.com/posts/1"
+    //     }
+    //     ).then(
+    //
+    //     function (response){
+    //         $log.info ("[Rest] Received response [response.data="+ response.data+"]");
+    //         $scope.users = response.data;
+    //     }
+    // );
+
+    //or
+
+    $http.get('http://rest-service.guides.spring.io/greeting').then(
+
+        function (response){
+            $log.info ("[Rest] Received response [response.data="+ response.data+"]");
+            $scope.users = response.data;
+            console.log ("[Rest] Received response [$scope.users="+ $scope.users+"]");
+        }
+    );
+
 
     $scope.sortData = function (column) {
         console.log("sortData Entering...");
